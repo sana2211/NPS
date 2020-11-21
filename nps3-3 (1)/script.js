@@ -33,11 +33,10 @@ function getParkResults(query, maxResults){
   fetch(url)
     .then(response =>response.json())
     .then(response => renderParkResults(response.data))
-    .catch(err =>alert(err));    
-}
-.catch(err => {
+  .catch(err => {
            $('#js-error-message').text(`Unfortuntately our server is down and we're unable to process your request at the moment :-(, please try again later.`);
          });
+}
 //Render the GET Request results to the DOM
 function renderParkResults(parkList){    
   console.log(parkList)  
